@@ -1,0 +1,260 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{45E9CF5E-9645-5233-2820-F6271514E599}</ProjectGuid>
+    <WindowsTargetPlatformVersion>8.1</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)'=='Release'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>Unicode</CharacterSet>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)'=='Debug'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Platform)'=='x64'" Label="Configuration">
+    <PlatformToolset>Windows7.1SDK</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Label="Configuration" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <PlatformToolset>v140</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Label="Configuration" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <PlatformToolset>v140</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>10.0.30319.1</_ProjectFileVersion>
+    <LinkIncremental Condition="'$(Configuration)'=='Release'">false</LinkIncremental>
+    <IntDir>$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
+    <OutDir>$(SolutionDir)$(Platform)\$(Configuration)\</OutDir>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)'=='Debug'">
+    <ClCompile>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;_CRT_SECURE_NO_WARNINGS;_CRT_NON_CONFORMING_SWPRINTFS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+      <AssemblerOutput>All</AssemblerOutput>
+      <WarningLevel>Level4</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <CallingConvention>FastCall</CallingConvention>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)'=='Release'">
+    <ClCompile>
+      <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
+      <FavorSizeOrSpeed>Speed</FavorSizeOrSpeed>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;_CRT_SECURE_NO_WARNINGS;_CRT_NON_CONFORMING_SWPRINTFS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <StringPooling>true</StringPooling>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <AssemblerOutput>All</AssemblerOutput>
+      <WarningLevel>Level4</WarningLevel>
+      <CallingConvention>FastCall</CallingConvention>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Full</Optimization>
+      <IntrinsicFunctions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</IntrinsicFunctions>
+      <OmitFramePointers Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</OmitFramePointers>
+      <EnableFiberSafeOptimizations Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</EnableFiberSafeOptimizations>
+    </ClCompile>
+    <Link />
+    <Link>
+      <AdditionalDependencies Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <GenerateDebugInformation Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</GenerateDebugInformation>
+      <FullProgramDatabaseFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</FullProgramDatabaseFile>
+      <OptimizeReferences Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</OptimizeReferences>
+      <EnableCOMDATFolding Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</EnableCOMDATFolding>
+      <LinkTimeCodeGeneration Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">UseLinkTimeCodeGeneration</LinkTimeCodeGeneration>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="..\src\ADPCM_VT1682.cpp" />
+    <ClCompile Include="..\src\ADPCM_VT369.cpp" />
+    <ClCompile Include="..\src\APU.cpp" />
+    <ClCompile Include="..\src\AVI.cpp" />
+    <ClCompile Include="..\src\Cheats.cpp" />
+    <ClCompile Include="..\src\Controllers.cpp" />
+    <ClCompile Include="..\src\CPU.cpp" />
+    <ClCompile Include="..\src\c_e_bandaihyper.cpp" />
+    <ClCompile Include="..\src\c_e_bit79key.cpp" />
+    <ClCompile Include="..\src\c_e_citypatrolman.cpp" />
+    <ClCompile Include="..\src\c_e_famtraina.cpp" />
+    <ClCompile Include="..\src\c_e_famtrainb.cpp" />
+    <ClCompile Include="..\src\c_e_goldenkey.cpp" />
+    <ClCompile Include="..\src\c_e_goldenNuggetCasino.cpp" />
+    <ClCompile Include="..\src\c_e_hori4play.cpp" />
+    <ClCompile Include="..\src\c_e_konamihyper.cpp" />
+    <ClCompile Include="..\src\c_e_moguraa.cpp" />
+    <ClCompile Include="..\src\c_e_pec586key.cpp" />
+    <ClCompile Include="..\src\c_e_sharpC1cassette.cpp" />
+    <ClCompile Include="..\src\c_e_turbofile.cpp" />
+    <ClCompile Include="..\src\c_e_zapper.cpp" />
+    <ClCompile Include="..\src\c_s_powpada.cpp" />
+    <ClCompile Include="..\src\c_s_powpadb.cpp" />
+    <ClCompile Include="..\src\c_s_subormouse.cpp" />
+    <ClCompile Include="..\src\c_s_sudokuExcalibur.cpp" />
+    <ClCompile Include="..\src\Debugger.cpp" />
+    <ClCompile Include="..\src\DIPSwitch.cpp" />
+    <ClCompile Include="..\src\FDS.cpp" />
+    <ClCompile Include="..\src\FDSFile\FDSBlock.cpp" />
+    <ClCompile Include="..\src\FDSFile\FDSFile.cpp" />
+    <ClCompile Include="..\src\FDSFile\FDSFile_FDSStick_Binary.cpp" />
+    <ClCompile Include="..\src\FDSFile\FDSFile_BungMFC.cpp" />
+    <ClCompile Include="..\src\FDSFile\FDSFile_FDSStick_Raw.cpp" />
+    <ClCompile Include="..\src\FDSFile\FDSFile_FDSStick_Raw03.cpp" />
+    <ClCompile Include="..\src\FDSFile\FDSFile_FFE.cpp" />
+    <ClCompile Include="..\src\FDSFile\FDSFile_FQD.cpp" />
+    <ClCompile Include="..\src\FDSFile\FDSFile_fwNES.cpp" />
+    <ClCompile Include="..\src\FDSFile\FDSFile_NintendoQD.cpp" />
+    <ClCompile Include="..\src\FDSFile\FDSFile_QDC_Raw.cpp" />
+    <ClCompile Include="..\src\FDSFile\FDSFile_Venus.cpp" />
+    <ClCompile Include="..\src\FDSFile\FDSProtection.cpp" />
+    <ClCompile Include="..\src\FDS_Patch.cpp" />
+    <ClCompile Include="..\src\Filter.cpp" />
+    <ClCompile Include="..\src\GFX.cpp" />
+    <ClCompile Include="..\src\Hash.cpp" />
+    <ClCompile Include="..\src\HeaderEdit.cpp" />
+    <ClCompile Include="..\src\MapperInterface.cpp" />
+    <ClCompile Include="..\src\Movie.cpp" />
+    <ClCompile Include="..\src\NES.cpp" />
+    <ClCompile Include="..\src\Nintendulator.cpp" />
+    <ClCompile Include="..\src\OneBus.cpp" />
+    <ClCompile Include="..\src\OneBus_VT32.cpp" />
+    <ClCompile Include="..\src\OneBus_VT369.cpp" />
+    <ClCompile Include="..\src\plugThruDevice.cpp" />
+    <ClCompile Include="..\src\plugThruDevice_Bit79.cpp" />
+    <ClCompile Include="..\src\plugThruDevice_DoctorPCJr.cpp" />
+    <ClCompile Include="..\src\plugThruDevice_GameMaster.cpp" />
+    <ClCompile Include="..\src\plugThruDevice_GameMaster_GameDoctor.cpp" />
+    <ClCompile Include="..\src\plugThruDevice_GameMaster_Mappers.cpp" />
+    <ClCompile Include="..\src\plugThruDevice_GameMaster_MasterLink.cpp" />
+    <ClCompile Include="..\src\plugThruDevice_StudyBox.cpp" />
+    <ClCompile Include="..\src\plugThruDevice_SuperGameDoctor.cpp" />
+    <ClCompile Include="..\src\plugThruDevice_GameGenie.cpp" />
+    <ClCompile Include="..\src\plugThruDevice_MagicCard.cpp" />
+    <ClCompile Include="..\src\plugThruDevice_ProActionReplay.cpp" />
+    <ClCompile Include="..\src\plugThruDevice_SousekiFammy.cpp" />
+    <ClCompile Include="..\src\plugThruDevice_SuperMagicCard.cpp" />
+    <ClCompile Include="..\src\plugThruDevice_SuperMagicCard_transfer.cpp" />
+    <ClCompile Include="..\src\plugThruDevice_TurboGameDoctor.cpp" />
+    <ClCompile Include="..\src\plugThruDevice_GameDoctor.cpp" />
+    <ClCompile Include="..\src\plugThruDevice_MiniDoctor.cpp" />
+    <ClCompile Include="..\src\PPU.cpp" />
+    <ClCompile Include="..\src\Settings.cpp" />
+    <ClCompile Include="..\src\UM6578.cpp" />
+    <ClCompile Include="..\src\simplefdc.cpp" />
+    <ClCompile Include="..\src\Sound.cpp" />
+    <ClCompile Include="..\src\States.cpp" />
+    <ClCompile Include="..\src\c_s_arkpad.cpp" />
+    <ClCompile Include="..\src\c_s_fourscore.cpp" />
+    <ClCompile Include="..\src\c_s_snescont.cpp" />
+    <ClCompile Include="..\src\c_s_snesmouse.cpp" />
+    <ClCompile Include="..\src\c_s_stdcont.cpp" />
+    <ClCompile Include="..\src\c_s_unconnected.cpp" />
+    <ClCompile Include="..\src\c_s_vszapper.cpp" />
+    <ClCompile Include="..\src\c_s_zapper.cpp" />
+    <ClCompile Include="..\src\c_e_arkpad.cpp" />
+    <ClCompile Include="..\src\c_e_fam4play.cpp" />
+    <ClCompile Include="..\src\c_e_fbkey.cpp" />
+    <ClCompile Include="..\src\c_e_suborkey.cpp" />
+    <ClCompile Include="..\src\c_e_tablet.cpp" />
+    <ClCompile Include="..\src\c_e_unconnected.cpp" />
+    <ClCompile Include="..\src\Tape.cpp" />
+    <ClCompile Include="..\src\Wordify.cpp" />
+    <ClCompile Include="..\src\WXN.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\src\ADPCM_VT1682.hpp" />
+    <ClInclude Include="..\src\ADPCM_VT369.hpp" />
+    <ClInclude Include="..\src\APU.h" />
+    <ClInclude Include="..\src\AVI.h" />
+    <ClInclude Include="..\src\Cheats.hpp" />
+    <ClInclude Include="..\src\Controllers.h" />
+    <ClInclude Include="..\src\CPU.h" />
+    <ClInclude Include="..\src\Debugger.h" />
+    <ClInclude Include="..\src\DIPSwitch.h" />
+    <ClInclude Include="..\src\FDS.h" />
+    <ClInclude Include="..\src\FDSFile\FDSBlock.hpp" />
+    <ClInclude Include="..\src\FDSFile\FDSFile.hpp" />
+    <ClInclude Include="..\src\FDSFile\FDSFile_FDSStick_Binary.hpp" />
+    <ClInclude Include="..\src\FDSFile\FDSFile_BungMFC.hpp" />
+    <ClInclude Include="..\src\FDSFile\FDSFile_FDSStick_Raw.hpp" />
+    <ClInclude Include="..\src\FDSFile\FDSFile_FDSStick_Raw03.hpp" />
+    <ClInclude Include="..\src\FDSFile\FDSFile_FFE.hpp" />
+    <ClInclude Include="..\src\FDSFile\FDSFile_FFE_dump.hpp" />
+    <ClInclude Include="..\src\FDSFile\FDSFile_FQD.hpp" />
+    <ClInclude Include="..\src\FDSFile\FDSFile_fwNES.hpp" />
+    <ClInclude Include="..\src\FDSFile\FDSFile_NintendoQD.hpp" />
+    <ClInclude Include="..\src\FDSFile\FDSFile_QDC_Raw.hpp" />
+    <ClInclude Include="..\src\FDSFile\FDSFile_Venus.hpp" />
+    <ClInclude Include="..\src\FDSFile\FDSProtection.hpp" />
+    <ClInclude Include="..\src\FDS_Patch.h" />
+    <ClInclude Include="..\src\Filter.h" />
+    <ClInclude Include="..\src\GameDB_Controllers.h" />
+    <ClInclude Include="..\src\GFX.h" />
+    <ClInclude Include="..\src\Hash.h" />
+    <ClInclude Include="..\src\HeaderEdit.h" />
+    <ClInclude Include="..\src\MapperInterface.h" />
+    <ClInclude Include="..\src\Movie.h" />
+    <ClInclude Include="..\src\NES.h" />
+    <ClInclude Include="..\src\Nintendulator.h" />
+    <ClInclude Include="..\src\OneBus.h" />
+    <ClInclude Include="..\src\OneBus_VT32.h" />
+    <ClInclude Include="..\src\OneBus_VT369.h" />
+    <ClInclude Include="..\src\plugThruDevice.hpp" />
+    <ClInclude Include="..\src\plugThruDevice_DoctorPCJr.hpp" />
+    <ClInclude Include="..\src\plugThruDevice_GameMaster.hpp" />
+    <ClInclude Include="..\src\plugThruDevice_StudyBox.hpp" />
+    <ClInclude Include="..\src\plugThruDevice_SuperMagicCard_transfer.hpp" />
+    <ClInclude Include="..\src\PPU.h" />
+    <ClInclude Include="..\src\Settings.h" />
+    <ClInclude Include="..\src\UM6578.h" />
+    <ClInclude Include="..\src\simplefdc.hpp" />
+    <ClInclude Include="..\src\Sound.h" />
+    <ClInclude Include="..\src\States.h" />
+    <ClInclude Include="..\src\StdAfx.h" />
+    <ClInclude Include="..\src\resource.h" />
+    <ClInclude Include="..\src\Tape.h" />
+    <ClInclude Include="..\src\Wordify.hpp" />
+    <ClInclude Include="..\src\WXN.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\src\Nintendulator.ico" />
+    <None Include="..\src\small.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="..\src\Nintendulator.rc" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

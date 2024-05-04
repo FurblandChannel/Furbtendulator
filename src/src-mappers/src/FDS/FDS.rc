@@ -1,0 +1,111 @@
+// Microsoft Visual C++ generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#define APSTUDIO_HIDDEN_SYMBOLS
+#include "windows.h"
+#undef APSTUDIO_HIDDEN_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// English (United States) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+#pragma code_page(1252)
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE 
+BEGIN
+    "#define APSTUDIO_HIDDEN_SYMBOLS\r\n"
+    "#include ""windows.h""\r\n"
+    "#undef APSTUDIO_HIDDEN_SYMBOLS\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE 
+BEGIN
+    "\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_FDS DIALOGEX 0, 0, 149, 145
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Famicom Disk System"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    PUSHBUTTON      "&Insert Disk",IDC_FDS_INSERT,4,4,68,16
+    PUSHBUTTON      "&Eject Disk",IDC_FDS_EJECT,76,4,68,16
+    COMBOBOX        IDC_FDS_DISKSEL,4,24,68,96,CBS_DROPDOWNLIST | WS_VSCROLL | WS_TABSTOP
+    DEFPUSHBUTTON   "Close",IDCANCEL,76,24,68,15
+    CONTROL         "Virtual Device Traps",IDC_FDS_TRAPS,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,4,64,138,14
+    COMBOBOX        IDC_FDS_MODEL,4,45,139,48,CBS_DROPDOWNLIST | WS_VSCROLL | WS_TABSTOP
+    CONTROL         "Test Mode",IDC_FDS_TEST_MODE,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,4,80,52,12
+    DEFPUSHBUTTON   "Save",IDC_FDS_SAVE_SW,76,78,68,15
+    PUSHBUTTON      "&Send File...",IDC_SMC_SEND,4,118,68,16
+    PUSHBUTTON      "&Receive File...",IDC_SMC_RECEIVE,75,119,68,16
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO
+BEGIN
+    IDD_FDS, DIALOG
+    BEGIN
+        LEFTMARGIN, 4
+        RIGHTMARGIN, 129
+        VERTGUIDE, 64
+        VERTGUIDE, 68
+        TOPMARGIN, 4
+        BOTTOMMARGIN, 141
+        HORZGUIDE, 20
+        HORZGUIDE, 24
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+#endif    // English (United States) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

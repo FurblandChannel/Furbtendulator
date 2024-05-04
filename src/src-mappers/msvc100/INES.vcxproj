@@ -1,0 +1,712 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{434D2535-E721-67C0-80DD-D1D62044115B}</ProjectGuid>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)'=='Release'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>Unicode</CharacterSet>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)'=='Debug'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Platform)'=='x64'" Label="Configuration">
+    <PlatformToolset>Windows7.1SDK</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Label="Configuration" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <PlatformToolset>v140</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Label="Configuration" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <PlatformToolset>v140</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>10.0.30319.1</_ProjectFileVersion>
+    <LinkIncremental Condition="'$(Configuration)'=='Release'">false</LinkIncremental>
+    <IntDir>$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
+    <OutDir>$(SolutionDir)$(Platform)\$(Configuration)\</OutDir>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)'=='Debug'">
+    <ClCompile>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;_USRDLL;INES_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+      <WarningLevel>Level4</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <CallingConvention>FastCall</CallingConvention>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)'=='Release'">
+    <ClCompile>
+      <Optimization>MaxSpeed</Optimization>
+      <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
+      <FavorSizeOrSpeed>Speed</FavorSizeOrSpeed>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;_USRDLL;INES_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <StringPooling>true</StringPooling>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <WarningLevel>Level4</WarningLevel>
+      <CallingConvention>FastCall</CallingConvention>
+      <IntrinsicFunctions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</IntrinsicFunctions>
+      <OmitFramePointers Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</OmitFramePointers>
+      <EnableFiberSafeOptimizations Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</EnableFiberSafeOptimizations>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;winmm.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <FullProgramDatabaseFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</FullProgramDatabaseFile>
+      <GenerateDebugInformation Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</GenerateDebugInformation>
+      <OptimizeReferences Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</OptimizeReferences>
+      <EnableCOMDATFolding Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</EnableCOMDATFolding>
+      <LinkTimeCodeGeneration Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">UseLinkTimeCodeGeneration</LinkTimeCodeGeneration>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="..\src\Hardware\Hash.cpp" />
+    <ClCompile Include="..\src\Hardware\h_EEPROM.cpp" />
+    <ClCompile Include="..\src\Hardware\h_EEPROM_93Cx6.cpp" />
+    <ClCompile Include="..\src\Hardware\h_FCG.cpp" />
+    <ClCompile Include="..\src\Hardware\h_FME7.cpp" />
+    <ClCompile Include="..\src\Hardware\h_JV001.cpp" />
+    <ClCompile Include="..\src\Hardware\h_JY.cpp" />
+    <ClCompile Include="..\src\Hardware\h_KS202.cpp" />
+    <ClCompile Include="..\src\Hardware\h_Latch.cpp" />
+    <ClCompile Include="..\src\Hardware\h_LZ93D50.cpp" />
+    <ClCompile Include="..\src\Hardware\h_Mic.cpp" />
+    <ClCompile Include="..\src\Hardware\h_MMC1.cpp" />
+    <ClCompile Include="..\src\Hardware\h_MMC2.cpp" />
+    <ClCompile Include="..\src\Hardware\h_MMC3.cpp" />
+    <ClCompile Include="..\src\Hardware\h_MMC4.cpp" />
+    <ClCompile Include="..\src\Hardware\h_MMC5.cpp" />
+    <ClCompile Include="..\src\Hardware\h_MMC6.cpp" />
+    <ClCompile Include="..\src\Hardware\h_N118.cpp" />
+    <ClCompile Include="..\src\Hardware\h_OneBus.cpp" />
+    <ClCompile Include="..\src\Hardware\h_OneBus_GPIO.cpp" />
+    <ClCompile Include="..\src\Hardware\h_PIC16C5x.cpp" />
+    <ClCompile Include="..\src\Hardware\h_FlashROM.cpp" />
+    <ClCompile Include="..\src\Hardware\h_SerialDevice.cpp" />
+    <ClCompile Include="..\src\Hardware\h_TXCLatch.cpp" />
+    <ClCompile Include="..\src\Hardware\h_VRC24.cpp" />
+    <ClCompile Include="..\src\Hardware\h_VRC6.cpp" />
+    <ClCompile Include="..\src\Hardware\h_VRC7.cpp" />
+    <ClCompile Include="..\src\Hardware\simplefdc.cpp" />
+    <ClCompile Include="..\src\Hardware\Sound\Butterworth.cpp" />
+    <ClCompile Include="..\src\Hardware\Sound\s_ADPCM3Bit.cpp" />
+    <ClCompile Include="..\src\Hardware\Sound\s_FDS.cpp" />
+    <ClCompile Include="..\src\Hardware\Sound\s_hc55516.cpp" />
+    <ClCompile Include="..\src\Hardware\Sound\s_MMC5.cpp" />
+    <ClCompile Include="..\src\Hardware\Sound\s_N163.cpp" />
+    <ClCompile Include="..\src\Hardware\Sound\s_SUN5.cpp" />
+    <ClCompile Include="..\src\Hardware\Sound\s_upd7756.cpp" />
+    <ClCompile Include="..\src\Hardware\Sound\s_VRC6.cpp" />
+    <ClCompile Include="..\src\Hardware\Sound\s_VRC7.cpp" />
+    <ClCompile Include="..\src\Hardware\Sound\s_waveFile.cpp" />
+    <ClCompile Include="..\src\iNES\FDS conversions\mapper040.cpp" />
+    <ClCompile Include="..\src\iNES\FDS conversions\mapper042.cpp" />
+    <ClCompile Include="..\src\iNES\FDS conversions\mapper043.cpp" />
+    <ClCompile Include="..\src\iNES\FDS conversions\mapper050.cpp" />
+    <ClCompile Include="..\src\iNES\FDS conversions\mapper103.cpp" />
+    <ClCompile Include="..\src\iNES\FDS conversions\mapper108.cpp" />
+    <ClCompile Include="..\src\iNES\FDS conversions\mapper120.cpp" />
+    <ClCompile Include="..\src\iNES\FDS conversions\mapper125.cpp" />
+    <ClCompile Include="..\src\iNES\FDS conversions\mapper142.cpp" />
+    <ClCompile Include="..\src\iNES\FDS conversions\mapper302.cpp" />
+    <ClCompile Include="..\src\iNES\FDS conversions\mapper303.cpp" />
+    <ClCompile Include="..\src\iNES\FDS conversions\mapper304.cpp" />
+    <ClCompile Include="..\src\iNES\FDS conversions\mapper305.cpp" />
+    <ClCompile Include="..\src\iNES\FDS conversions\mapper306.cpp" />
+    <ClCompile Include="..\src\iNES\FDS conversions\mapper307.cpp" />
+    <ClCompile Include="..\src\iNES\FDS conversions\mapper309.cpp" />
+    <ClCompile Include="..\src\iNES\FDS conversions\mapper311.cpp" />
+    <ClCompile Include="..\src\iNES\FDS conversions\mapper312.cpp" />
+    <ClCompile Include="..\src\iNES\FDS conversions\mapper346.cpp" />
+    <ClCompile Include="..\src\iNES\FDS conversions\mapper347.cpp" />
+    <ClCompile Include="..\src\iNES\FDS conversions\mapper368.cpp" />
+    <ClCompile Include="..\src\iNES\FDS conversions\mapper415.cpp" />
+    <ClCompile Include="..\src\iNES\FDS conversions\mapper469.cpp" />
+    <ClCompile Include="..\src\iNES\FDS conversions\mapper522.cpp" />
+    <ClCompile Include="..\src\iNES\FDS conversions\mapper535.cpp" />
+    <ClCompile Include="..\src\iNES\FDS conversions\mapper538.cpp" />
+    <ClCompile Include="..\src\iNES\FDS conversions\mapper539.cpp" />
+    <ClCompile Include="..\src\iNES\FDS conversions\mapper548.cpp" />
+    <ClCompile Include="..\src\iNES\FDS conversions\mapper549.cpp" />
+    <ClCompile Include="..\src\iNES\FDS conversions\mapper554.cpp" />
+    <ClCompile Include="..\src\iNES\FDS conversions\mapper557.cpp" />
+    <ClCompile Include="..\src\iNES\Jingtai\mapper035.cpp" />
+    <ClCompile Include="..\src\iNES\Jingtai\mapper090.cpp" />
+    <ClCompile Include="..\src\iNES\Jingtai\mapper091.cpp" />
+    <ClCompile Include="..\src\iNES\Jingtai\mapper209.cpp" />
+    <ClCompile Include="..\src\iNES\Jingtai\mapper211.cpp" />
+    <ClCompile Include="..\src\iNES\Jingtai\mapper281.cpp" />
+    <ClCompile Include="..\src\iNES\Jingtai\mapper282.cpp" />
+    <ClCompile Include="..\src\iNES\Jingtai\mapper295.cpp" />
+    <ClCompile Include="..\src\iNES\Jingtai\mapper358.cpp" />
+    <ClCompile Include="..\src\iNES\Jingtai\mapper386.cpp" />
+    <ClCompile Include="..\src\iNES\Jingtai\mapper387.cpp" />
+    <ClCompile Include="..\src\iNES\Jingtai\mapper388.cpp" />
+    <ClCompile Include="..\src\iNES\Jingtai\mapper397.cpp" />
+    <ClCompile Include="..\src\iNES\Jingtai\mapper421.cpp" />
+    <ClCompile Include="..\src\iNES\Jingtai\mapper550.cpp" />
+    <ClCompile Include="..\src\iNES\mapper000.cpp" />
+    <ClCompile Include="..\src\iNES\mapper002.cpp" />
+    <ClCompile Include="..\src\iNES\mapper003.cpp" />
+    <ClCompile Include="..\src\iNES\mapper004.cpp" />
+    <ClCompile Include="..\src\iNES\mapper005.cpp" />
+    <ClCompile Include="..\src\iNES\mapper006.cpp" />
+    <ClCompile Include="..\src\iNES\mapper007.cpp" />
+    <ClCompile Include="..\src\iNES\mapper008.cpp" />
+    <ClCompile Include="..\src\iNES\mapper009.cpp" />
+    <ClCompile Include="..\src\iNES\mapper010.cpp" />
+    <ClCompile Include="..\src\iNES\mapper011.cpp" />
+    <ClCompile Include="..\src\iNES\mapper013.cpp" />
+    <ClCompile Include="..\src\iNES\mapper016.cpp" />
+    <ClCompile Include="..\src\iNES\mapper017.cpp" />
+    <ClCompile Include="..\src\iNES\mapper018.cpp" />
+    <ClCompile Include="..\src\iNES\mapper019.cpp" />
+    <ClCompile Include="..\src\iNES\mapper027.cpp" />
+    <ClCompile Include="..\src\iNES\mapper029.cpp" />
+    <ClCompile Include="..\src\iNES\mapper030.cpp" />
+    <ClCompile Include="..\src\iNES\mapper031.cpp" />
+    <ClCompile Include="..\src\iNES\mapper032.cpp" />
+    <ClCompile Include="..\src\iNES\mapper033.cpp" />
+    <ClCompile Include="..\src\iNES\mapper034.cpp" />
+    <ClCompile Include="..\src\iNES\mapper036.cpp" />
+    <ClCompile Include="..\src\iNES\mapper038.cpp" />
+    <ClCompile Include="..\src\iNES\mapper048.cpp" />
+    <ClCompile Include="..\src\iNES\mapper055.cpp" />
+    <ClCompile Include="..\src\iNES\mapper056.cpp" />
+    <ClCompile Include="..\src\iNES\mapper064.cpp" />
+    <ClCompile Include="..\src\iNES\mapper065.cpp" />
+    <ClCompile Include="..\src\iNES\mapper066.cpp" />
+    <ClCompile Include="..\src\iNES\mapper067.cpp" />
+    <ClCompile Include="..\src\iNES\mapper068.cpp" />
+    <ClCompile Include="..\src\iNES\mapper069.cpp" />
+    <ClCompile Include="..\src\iNES\mapper070.cpp" />
+    <ClCompile Include="..\src\iNES\mapper071.cpp" />
+    <ClCompile Include="..\src\iNES\mapper072.cpp" />
+    <ClCompile Include="..\src\iNES\mapper076.cpp" />
+    <ClCompile Include="..\src\iNES\mapper077.cpp" />
+    <ClCompile Include="..\src\iNES\mapper078.cpp" />
+    <ClCompile Include="..\src\iNES\mapper079.cpp" />
+    <ClCompile Include="..\src\iNES\mapper080.cpp" />
+    <ClCompile Include="..\src\iNES\mapper081.cpp" />
+    <ClCompile Include="..\src\iNES\mapper082.cpp" />
+    <ClCompile Include="..\src\iNES\mapper083.cpp" />
+    <ClCompile Include="..\src\iNES\mapper086.cpp" />
+    <ClCompile Include="..\src\iNES\mapper087.cpp" />
+    <ClCompile Include="..\src\iNES\mapper088.cpp" />
+    <ClCompile Include="..\src\iNES\mapper089.cpp" />
+    <ClCompile Include="..\src\iNES\mapper092.cpp" />
+    <ClCompile Include="..\src\iNES\mapper093.cpp" />
+    <ClCompile Include="..\src\iNES\mapper094.cpp" />
+    <ClCompile Include="..\src\iNES\mapper095.cpp" />
+    <ClCompile Include="..\src\iNES\mapper096.cpp" />
+    <ClCompile Include="..\src\iNES\mapper097.cpp" />
+    <ClCompile Include="..\src\iNES\mapper099.cpp" />
+    <ClCompile Include="..\src\iNES\mapper101.cpp" />
+    <ClCompile Include="..\src\iNES\mapper106.cpp" />
+    <ClCompile Include="..\src\iNES\mapper107.cpp" />
+    <ClCompile Include="..\src\iNES\mapper111.cpp" />
+    <ClCompile Include="..\src\iNES\mapper112.cpp" />
+    <ClCompile Include="..\src\iNES\mapper113.cpp" />
+    <ClCompile Include="..\src\iNES\mapper117.cpp" />
+    <ClCompile Include="..\src\iNES\mapper122.cpp" />
+    <ClCompile Include="..\src\iNES\mapper127.cpp" />
+    <ClCompile Include="..\src\iNES\mapper132.cpp" />
+    <ClCompile Include="..\src\iNES\mapper133.cpp" />
+    <ClCompile Include="..\src\iNES\mapper136.cpp" />
+    <ClCompile Include="..\src\iNES\mapper137.cpp" />
+    <ClCompile Include="..\src\iNES\mapper138.cpp" />
+    <ClCompile Include="..\src\iNES\mapper139.cpp" />
+    <ClCompile Include="..\src\iNES\mapper140.cpp" />
+    <ClCompile Include="..\src\iNES\mapper141.cpp" />
+    <ClCompile Include="..\src\iNES\mapper143.cpp" />
+    <ClCompile Include="..\src\iNES\mapper144.cpp" />
+    <ClCompile Include="..\src\iNES\mapper145.cpp" />
+    <ClCompile Include="..\src\iNES\mapper146.cpp" />
+    <ClCompile Include="..\src\iNES\mapper147.cpp" />
+    <ClCompile Include="..\src\iNES\mapper148.cpp" />
+    <ClCompile Include="..\src\iNES\mapper149.cpp" />
+    <ClCompile Include="..\src\iNES\mapper150.cpp" />
+    <ClCompile Include="..\src\iNES\mapper152.cpp" />
+    <ClCompile Include="..\src\iNES\mapper153.cpp" />
+    <ClCompile Include="..\src\iNES\mapper154.cpp" />
+    <ClCompile Include="..\src\iNES\mapper156.cpp" />
+    <ClCompile Include="..\src\iNES\mapper157.cpp" />
+    <ClCompile Include="..\src\iNES\mapper159.cpp" />
+    <ClCompile Include="..\src\iNES\mapper162.cpp" />
+    <ClCompile Include="..\src\iNES\mapper163.cpp" />
+    <ClCompile Include="..\src\iNES\mapper164.cpp" />
+    <ClCompile Include="..\src\iNES\mapper166.cpp" />
+    <ClCompile Include="..\src\iNES\mapper167.cpp" />
+    <ClCompile Include="..\src\iNES\mapper168.cpp" />
+    <ClCompile Include="..\src\iNES\mapper169.cpp" />
+    <ClCompile Include="..\src\iNES\mapper170.cpp" />
+    <ClCompile Include="..\src\iNES\mapper171.cpp" />
+    <ClCompile Include="..\src\iNES\mapper172.cpp" />
+    <ClCompile Include="..\src\iNES\mapper173.cpp" />
+    <ClCompile Include="..\src\iNES\mapper177.cpp" />
+    <ClCompile Include="..\src\iNES\mapper178.cpp" />
+    <ClCompile Include="..\src\iNES\mapper180.cpp" />
+    <ClCompile Include="..\src\iNES\mapper184.cpp" />
+    <ClCompile Include="..\src\iNES\mapper185.cpp" />
+    <ClCompile Include="..\src\iNES\mapper186.cpp" />
+    <ClCompile Include="..\src\iNES\mapper188.cpp" />
+    <ClCompile Include="..\src\iNES\mapper190.cpp" />
+    <ClCompile Include="..\src\iNES\mapper193.cpp" />
+    <ClCompile Include="..\src\iNES\mapper206.cpp" />
+    <ClCompile Include="..\src\iNES\mapper207.cpp" />
+    <ClCompile Include="..\src\iNES\mapper210.cpp" />
+    <ClCompile Include="..\src\iNES\mapper216.cpp" />
+    <ClCompile Include="..\src\iNES\mapper218.cpp" />
+    <ClCompile Include="..\src\iNES\mapper240.cpp" />
+    <ClCompile Include="..\src\iNES\mapper241.cpp" />
+    <ClCompile Include="..\src\iNES\mapper243.cpp" />
+    <ClCompile Include="..\src\iNES\mapper244.cpp" />
+    <ClCompile Include="..\src\iNES\mapper246.cpp" />
+    <ClCompile Include="..\src\iNES\mapper252.cpp" />
+    <ClCompile Include="..\src\iNES\mapper253.cpp" />
+    <ClCompile Include="..\src\iNES\mapper257.cpp" />
+    <ClCompile Include="..\src\iNES\mapper264.cpp" />
+    <ClCompile Include="..\src\iNES\mapper272.cpp" />
+    <ClCompile Include="..\src\iNES\mapper273.cpp" />
+    <ClCompile Include="..\src\iNES\mapper284.cpp" />
+    <ClCompile Include="..\src\iNES\mapper323.cpp" />
+    <ClCompile Include="..\src\iNES\mapper326.cpp" />
+    <ClCompile Include="..\src\iNES\mapper328.cpp" />
+    <ClCompile Include="..\src\iNES\mapper329.cpp" />
+    <ClCompile Include="..\src\iNES\mapper330.cpp" />
+    <ClCompile Include="..\src\iNES\mapper355.cpp" />
+    <ClCompile Include="..\src\iNES\mapper365.cpp" />
+    <ClCompile Include="..\src\iNES\mapper371.cpp" />
+    <ClCompile Include="..\src\iNES\mapper405.cpp" />
+    <ClCompile Include="..\src\iNES\mapper409.cpp" />
+    <ClCompile Include="..\src\iNES\mapper413.cpp" />
+    <ClCompile Include="..\src\iNES\mapper417.cpp" />
+    <ClCompile Include="..\src\iNES\mapper418.cpp" />
+    <ClCompile Include="..\src\iNES\mapper440.cpp" />
+    <ClCompile Include="..\src\iNES\mapper442.cpp" />
+    <ClCompile Include="..\src\iNES\mapper471.cpp" />
+    <ClCompile Include="..\src\iNES\mapper514.cpp" />
+    <ClCompile Include="..\src\iNES\mapper515.cpp" />
+    <ClCompile Include="..\src\iNES\mapper517.cpp" />
+    <ClCompile Include="..\src\iNES\mapper518.cpp" />
+    <ClCompile Include="..\src\iNES\mapper521.cpp" />
+    <ClCompile Include="..\src\iNES\mapper525.cpp" />
+    <ClCompile Include="..\src\iNES\mapper526.cpp" />
+    <ClCompile Include="..\src\iNES\mapper532.cpp" />
+    <ClCompile Include="..\src\iNES\mapper533.cpp" />
+    <ClCompile Include="..\src\iNES\mapper547.cpp" />
+    <ClCompile Include="..\src\iNES\mapper551.cpp" />
+    <ClCompile Include="..\src\iNES\mapper552.cpp" />
+    <ClCompile Include="..\src\iNES\mapper553.cpp" />
+    <ClCompile Include="..\src\iNES\mapper558.cpp" />
+    <ClCompile Include="..\src\iNES\mapper560.cpp" />
+    <ClCompile Include="..\src\iNES\mapper561.cpp" />
+    <ClCompile Include="..\src\iNES\mapper562.cpp" />
+    <ClCompile Include="..\src\iNES\mapper756.cpp" />
+    <ClCompile Include="..\src\iNES\mapper761.cpp" />
+    <ClCompile Include="..\src\iNES\mapper767.cpp" />
+    <ClCompile Include="..\src\iNES\MMC1-based\mapper001.cpp" />
+    <ClCompile Include="..\src\iNES\MMC1-based\mapper105.cpp" />
+    <ClCompile Include="..\src\iNES\MMC1-based\mapper155.cpp" />
+    <ClCompile Include="..\src\iNES\MMC1-based\mapper297.cpp" />
+    <ClCompile Include="..\src\iNES\MMC1-based\mapper374.cpp" />
+    <ClCompile Include="..\src\iNES\MMC1-based\mapper404.cpp" />
+    <ClCompile Include="..\src\iNES\MMC1-based\mapper543.cpp" />
+    <ClCompile Include="..\src\iNES\MMC1-based\mapper546.cpp" />
+    <ClCompile Include="..\src\iNES\MMC1-based\mapper752.cpp" />
+    <ClCompile Include="..\src\iNES\MMC1-based\mapper766.cpp" />
+    <ClCompile Include="..\src\iNES\MMC3-based\mapper012.cpp" />
+    <ClCompile Include="..\src\iNES\MMC3-based\mapper037.cpp" />
+    <ClCompile Include="..\src\iNES\MMC3-based\mapper044.cpp" />
+    <ClCompile Include="..\src\iNES\MMC3-based\mapper045.cpp" />
+    <ClCompile Include="..\src\iNES\MMC3-based\mapper047.cpp" />
+    <ClCompile Include="..\src\iNES\MMC3-based\mapper049.cpp" />
+    <ClCompile Include="..\src\iNES\MMC3-based\mapper052.cpp" />
+    <ClCompile Include="..\src\iNES\MMC3-based\mapper074.cpp" />
+    <ClCompile Include="..\src\iNES\MMC3-based\mapper100.cpp" />
+    <ClCompile Include="..\src\iNES\MMC3-based\mapper114.cpp" />
+    <ClCompile Include="..\src\iNES\MMC3-based\mapper115.cpp" />
+    <ClCompile Include="..\src\iNES\MMC3-based\mapper118.cpp" />
+    <ClCompile Include="..\src\iNES\MMC3-based\mapper119.cpp" />
+    <ClCompile Include="..\src\iNES\MMC3-based\mapper121.cpp" />
+    <ClCompile Include="..\src\iNES\MMC3-based\mapper123.cpp" />
+    <ClCompile Include="..\src\iNES\MMC3-based\mapper126.cpp" />
+    <ClCompile Include="..\src\iNES\MMC3-based\mapper134.cpp" />
+    <ClCompile Include="..\src\iNES\MMC3-based\mapper165.cpp" />
+    <ClCompile Include="..\src\iNES\MMC3-based\mapper176.cpp" />
+    <ClCompile Include="..\src\iNES\MMC3-based\mapper182.cpp" />
+    <ClCompile Include="..\src\iNES\MMC3-based\mapper187.cpp" />
+    <ClCompile Include="..\src\iNES\MMC3-based\mapper189.cpp" />
+    <ClCompile Include="..\src\iNES\MMC3-based\mapper191.cpp" />
+    <ClCompile Include="..\src\iNES\MMC3-based\mapper192.cpp" />
+    <ClCompile Include="..\src\iNES\MMC3-based\mapper194.cpp" />
+    <ClCompile Include="..\src\iNES\MMC3-based\mapper195.cpp" />
+    <ClCompile Include="..\src\iNES\MMC3-based\mapper196.cpp" />
+    <ClCompile Include="..\src\iNES\MMC3-based\mapper197.cpp" />
+    <ClCompile Include="..\src\iNES\MMC3-based\mapper198.cpp" />
+    <ClCompile Include="..\src\iNES\MMC3-based\mapper199.cpp" />
+    <ClCompile Include="..\src\iNES\MMC3-based\mapper205.cpp" />
+    <ClCompile Include="..\src\iNES\MMC3-based\mapper208.cpp" />
+    <ClCompile Include="..\src\iNES\MMC3-based\mapper215.cpp" />
+    <ClCompile Include="..\src\iNES\MMC3-based\mapper219.cpp" />
+    <ClCompile Include="..\src\iNES\MMC3-based\mapper224.cpp" />
+    <ClCompile Include="..\src\iNES\MMC3-based\mapper238.cpp" />
+    <ClCompile Include="..\src\iNES\MMC3-based\mapper245.cpp" />
+    <ClCompile Include="..\src\iNES\MMC3-based\mapper249.cpp" />
+    <ClCompile Include="..\src\iNES\MMC3-based\mapper250.cpp" />
+    <ClCompile Include="..\src\iNES\MMC3-based\mapper254.cpp" />
+    <ClCompile Include="..\src\iNES\MMC3-based\mapper258.cpp" />
+    <ClCompile Include="..\src\iNES\MMC3-based\mapper259.cpp" />
+    <ClCompile Include="..\src\iNES\MMC3-based\mapper260.cpp" />
+    <ClCompile Include="..\src\iNES\MMC3-based\mapper262.cpp" />
+    <ClCompile Include="..\src\iNES\MMC3-based\mapper263.cpp" />
+    <ClCompile Include="..\src\iNES\MMC3-based\mapper267.cpp" />
+    <ClCompile Include="..\src\iNES\MMC3-based\mapper268.cpp" />
+    <ClCompile Include="..\src\iNES\MMC3-based\mapper269.cpp" />
+    <ClCompile Include="..\src\iNES\MMC3-based\mapper287.cpp" />
+    <ClCompile Include="..\src\iNES\MMC3-based\mapper291.cpp" />
+    <ClCompile Include="..\src\iNES\MMC3-based\mapper292.cpp" />
+    <ClCompile Include="..\src\iNES\MMC3-based\mapper313.cpp" />
+    <ClCompile Include="..\src\iNES\MMC3-based\mapper315.cpp" />
+    <ClCompile Include="..\src\iNES\MMC3-based\mapper321.cpp" />
+    <ClCompile Include="..\src\iNES\MMC3-based\mapper322.cpp" />
+    <ClCompile Include="..\src\iNES\MMC3-based\mapper325.cpp" />
+    <ClCompile Include="..\src\iNES\MMC3-based\mapper327.cpp" />
+    <ClCompile Include="..\src\iNES\MMC3-based\mapper333.cpp" />
+    <ClCompile Include="..\src\iNES\MMC3-based\mapper334.cpp" />
+    <ClCompile Include="..\src\iNES\MMC3-based\mapper339.cpp" />
+    <ClCompile Include="..\src\iNES\MMC3-based\mapper344.cpp" />
+    <ClCompile Include="..\src\iNES\MMC3-based\mapper345.cpp" />
+    <ClCompile Include="..\src\iNES\MMC3-based\mapper348.cpp" />
+    <ClCompile Include="..\src\iNES\MMC3-based\mapper353.cpp" />
+    <ClCompile Include="..\src\iNES\MMC3-based\mapper356.cpp" />
+    <ClCompile Include="..\src\iNES\MMC3-based\mapper361.cpp" />
+    <ClCompile Include="..\src\iNES\MMC3-based\mapper364.cpp" />
+    <ClCompile Include="..\src\iNES\MMC3-based\mapper366.cpp" />
+    <ClCompile Include="..\src\iNES\MMC3-based\mapper367.cpp" />
+    <ClCompile Include="..\src\iNES\MMC3-based\mapper369.cpp" />
+    <ClCompile Include="..\src\iNES\MMC3-based\mapper370.cpp" />
+    <ClCompile Include="..\src\iNES\MMC3-based\mapper372.cpp" />
+    <ClCompile Include="..\src\iNES\MMC3-based\mapper373.cpp" />
+    <ClCompile Include="..\src\iNES\MMC3-based\mapper376.cpp" />
+    <ClCompile Include="..\src\iNES\MMC3-based\mapper377.cpp" />
+    <ClCompile Include="..\src\iNES\MMC3-based\mapper383.cpp" />
+    <ClCompile Include="..\src\iNES\MMC3-based\mapper391.cpp" />
+    <ClCompile Include="..\src\iNES\MMC3-based\mapper392.cpp" />
+    <ClCompile Include="..\src\iNES\MMC3-based\mapper393.cpp" />
+    <ClCompile Include="..\src\iNES\MMC3-based\mapper395.cpp" />
+    <ClCompile Include="..\src\iNES\MMC3-based\mapper399.cpp" />
+    <ClCompile Include="..\src\iNES\MMC3-based\mapper401.cpp" />
+    <ClCompile Include="..\src\iNES\MMC3-based\mapper406.cpp" />
+    <ClCompile Include="..\src\iNES\MMC3-based\mapper410.cpp" />
+    <ClCompile Include="..\src\iNES\MMC3-based\mapper411.cpp" />
+    <ClCompile Include="..\src\iNES\MMC3-based\mapper412.cpp" />
+    <ClCompile Include="..\src\iNES\MMC3-based\mapper420.cpp" />
+    <ClCompile Include="..\src\iNES\MMC3-based\mapper422.cpp" />
+    <ClCompile Include="..\src\iNES\MMC3-based\mapper430.cpp" />
+    <ClCompile Include="..\src\iNES\MMC3-based\mapper432.cpp" />
+    <ClCompile Include="..\src\iNES\MMC3-based\mapper441.cpp" />
+    <ClCompile Include="..\src\iNES\MMC3-based\mapper443.cpp" />
+    <ClCompile Include="..\src\iNES\MMC3-based\mapper444.cpp" />
+    <ClCompile Include="..\src\iNES\MMC3-based\mapper445.cpp" />
+    <ClCompile Include="..\src\iNES\MMC3-based\mapper451.cpp" />
+    <ClCompile Include="..\src\iNES\MMC3-based\mapper455.cpp" />
+    <ClCompile Include="..\src\iNES\MMC3-based\mapper456.cpp" />
+    <ClCompile Include="..\src\iNES\MMC3-based\mapper457.cpp" />
+    <ClCompile Include="..\src\iNES\MMC3-based\mapper458.cpp" />
+    <ClCompile Include="..\src\iNES\MMC3-based\mapper460.cpp" />
+    <ClCompile Include="..\src\iNES\MMC3-based\mapper467.cpp" />
+    <ClCompile Include="..\src\iNES\MMC3-based\mapper472.cpp" />
+    <ClCompile Include="..\src\iNES\MMC3-based\mapper473.cpp" />
+    <ClCompile Include="..\src\iNES\MMC3-based\mapper512.cpp" />
+    <ClCompile Include="..\src\iNES\MMC3-based\mapper513.cpp" />
+    <ClCompile Include="..\src\iNES\MMC3-based\mapper516.cpp" />
+    <ClCompile Include="..\src\iNES\MMC3-based\mapper523.cpp" />
+    <ClCompile Include="..\src\iNES\MMC3-based\mapper531.cpp" />
+    <ClCompile Include="..\src\iNES\MMC3-based\mapper534.cpp" />
+    <ClCompile Include="..\src\iNES\MMC3-based\mapper545.cpp" />
+    <ClCompile Include="..\src\iNES\MMC3-based\mapper555.cpp" />
+    <ClCompile Include="..\src\iNES\MMC3-based\mapper745.cpp" />
+    <ClCompile Include="..\src\iNES\MMC3-based\mapper747.cpp" />
+    <ClCompile Include="..\src\iNES\MMC3-based\mapper750.cpp" />
+    <ClCompile Include="..\src\iNES\MMC3-based\mapper753.cpp" />
+    <ClCompile Include="..\src\iNES\MMC3-based\mapper755.cpp" />
+    <ClCompile Include="..\src\iNES\MMC3-based\mapper757.cpp" />
+    <ClCompile Include="..\src\iNES\MMC3-based\mapper758.cpp" />
+    <ClCompile Include="..\src\iNES\MMC3-based\mapper760.cpp" />
+    <ClCompile Include="..\src\iNES\MMC3-based\mapper765.cpp" />
+    <ClCompile Include="..\src\iNES\multi-ASIC\mapper014.cpp" />
+    <ClCompile Include="..\src\iNES\multi-ASIC\mapper116.cpp" />
+    <ClCompile Include="..\src\iNES\multi-ASIC\mapper124.cpp" />
+    <ClCompile Include="..\src\iNES\multi-ASIC\mapper342.cpp" />
+    <ClCompile Include="..\src\iNES\multi-ASIC\mapper351.cpp" />
+    <ClCompile Include="..\src\iNES\multi-ASIC\mapper394.cpp" />
+    <ClCompile Include="..\src\iNES\multi-ASIC\mapper446.cpp" />
+    <ClCompile Include="..\src\iNES\multi-ASIC\mapper468.cpp" />
+    <ClCompile Include="..\src\iNES\multi-ASIC\mapper556.cpp" />
+    <ClCompile Include="..\src\iNES\multicart address latch\mapper058.cpp" />
+    <ClCompile Include="..\src\iNES\multicart address latch\mapper059.cpp" />
+    <ClCompile Include="..\src\iNES\multicart address latch\mapper061.cpp" />
+    <ClCompile Include="..\src\iNES\multicart address latch\mapper063.cpp" />
+    <ClCompile Include="..\src\iNES\multicart address latch\mapper174.cpp" />
+    <ClCompile Include="..\src\iNES\multicart address latch\mapper200.cpp" />
+    <ClCompile Include="..\src\iNES\multicart address latch\mapper201.cpp" />
+    <ClCompile Include="..\src\iNES\multicart address latch\mapper202.cpp" />
+    <ClCompile Include="..\src\iNES\multicart address latch\mapper204.cpp" />
+    <ClCompile Include="..\src\iNES\multicart address latch\mapper212.cpp" />
+    <ClCompile Include="..\src\iNES\multicart address latch\mapper213.cpp" />
+    <ClCompile Include="..\src\iNES\multicart address latch\mapper214.cpp" />
+    <ClCompile Include="..\src\iNES\multicart address latch\mapper217.cpp" />
+    <ClCompile Include="..\src\iNES\multicart address latch\mapper227.cpp" />
+    <ClCompile Include="..\src\iNES\multicart address latch\mapper229.cpp" />
+    <ClCompile Include="..\src\iNES\multicart address latch\mapper231.cpp" />
+    <ClCompile Include="..\src\iNES\multicart address latch\mapper242.cpp" />
+    <ClCompile Include="..\src\iNES\multicart address latch\mapper261.cpp" />
+    <ClCompile Include="..\src\iNES\multicart address latch\mapper280.cpp" />
+    <ClCompile Include="..\src\iNES\multicart address latch\mapper288.cpp" />
+    <ClCompile Include="..\src\iNES\multicart address latch\mapper290.cpp" />
+    <ClCompile Include="..\src\iNES\multicart address latch\mapper300.cpp" />
+    <ClCompile Include="..\src\iNES\multicart address latch\mapper301.cpp" />
+    <ClCompile Include="..\src\iNES\multicart address latch\mapper338.cpp" />
+    <ClCompile Include="..\src\iNES\multicart address latch\mapper340.cpp" />
+    <ClCompile Include="..\src\iNES\multicart address latch\mapper341.cpp" />
+    <ClCompile Include="..\src\iNES\multicart address latch\mapper349.cpp" />
+    <ClCompile Include="..\src\iNES\multicart address latch\mapper375.cpp" />
+    <ClCompile Include="..\src\iNES\multicart address latch\mapper380.cpp" />
+    <ClCompile Include="..\src\iNES\multicart address latch\mapper385.cpp" />
+    <ClCompile Include="..\src\iNES\multicart address latch\mapper402.cpp" />
+    <ClCompile Include="..\src\iNES\multicart address latch\mapper435.cpp" />
+    <ClCompile Include="..\src\iNES\multicart address latch\mapper449.cpp" />
+    <ClCompile Include="..\src\iNES\multicart address latch\mapper454.cpp" />
+    <ClCompile Include="..\src\iNES\multicart address latch\mapper459.cpp" />
+    <ClCompile Include="..\src\iNES\multicart address latch\mapper461.cpp" />
+    <ClCompile Include="..\src\iNES\multicart address latch\mapper464.cpp" />
+    <ClCompile Include="..\src\iNES\multicart address latch\mapper465.cpp" />
+    <ClCompile Include="..\src\iNES\multicart address latch\mapper541.cpp" />
+    <ClCompile Include="..\src\iNES\multicart address latch\mapper743.cpp" />
+    <ClCompile Include="..\src\iNES\multicart address latch\mapper748.cpp" />
+    <ClCompile Include="..\src\iNES\multicart address latch\mapper751.cpp" />
+    <ClCompile Include="..\src\iNES\multicart address latch\mapper763.cpp" />
+    <ClCompile Include="..\src\iNES\multicart data latch\mapper203.cpp" />
+    <ClCompile Include="..\src\iNES\multicart data latch\mapper265.cpp" />
+    <ClCompile Include="..\src\iNES\multicart data latch\mapper271.cpp" />
+    <ClCompile Include="..\src\iNES\multicart data latch\mapper277.cpp" />
+    <ClCompile Include="..\src\iNES\multicart data latch\mapper283.cpp" />
+    <ClCompile Include="..\src\iNES\multicart data latch\mapper285.cpp" />
+    <ClCompile Include="..\src\iNES\multicart data latch\mapper299.cpp" />
+    <ClCompile Include="..\src\iNES\multicart data latch\mapper324.cpp" />
+    <ClCompile Include="..\src\iNES\multicart data latch\mapper336.cpp" />
+    <ClCompile Include="..\src\iNES\multicart data latch\mapper343.cpp" />
+    <ClCompile Include="..\src\iNES\multicart data latch\mapper378.cpp" />
+    <ClCompile Include="..\src\iNES\multicart data latch\mapper379.cpp" />
+    <ClCompile Include="..\src\iNES\multicart data latch\mapper429.cpp" />
+    <ClCompile Include="..\src\iNES\multicart data latch\mapper433.cpp" />
+    <ClCompile Include="..\src\iNES\multicart data latch\mapper453.cpp" />
+    <ClCompile Include="..\src\iNES\multicart data latch\mapper564.cpp" />
+    <ClCompile Include="..\src\iNES\multicart data latch\mapper740.cpp" />
+    <ClCompile Include="..\src\iNES\multicart data latch\mapper759.cpp" />
+    <ClCompile Include="..\src\iNES\multicart data latch\mapper764.cpp" />
+    <ClCompile Include="..\src\iNES\multicart misc\mapper015.cpp" />
+    <ClCompile Include="..\src\iNES\multicart misc\mapper028.cpp" />
+    <ClCompile Include="..\src\iNES\multicart misc\mapper041.cpp" />
+    <ClCompile Include="..\src\iNES\multicart misc\mapper046.cpp" />
+    <ClCompile Include="..\src\iNES\multicart misc\mapper051.cpp" />
+    <ClCompile Include="..\src\iNES\multicart misc\mapper053.cpp" />
+    <ClCompile Include="..\src\iNES\multicart misc\mapper057.cpp" />
+    <ClCompile Include="..\src\iNES\multicart misc\mapper060.cpp" />
+    <ClCompile Include="..\src\iNES\multicart misc\mapper062.cpp" />
+    <ClCompile Include="..\src\iNES\multicart misc\mapper104.cpp" />
+    <ClCompile Include="..\src\iNES\multicart misc\mapper128.cpp" />
+    <ClCompile Include="..\src\iNES\multicart misc\mapper175.cpp" />
+    <ClCompile Include="..\src\iNES\multicart misc\mapper221.cpp" />
+    <ClCompile Include="..\src\iNES\multicart misc\mapper225.cpp" />
+    <ClCompile Include="..\src\iNES\multicart misc\mapper226.cpp" />
+    <ClCompile Include="..\src\iNES\multicart misc\mapper228.cpp" />
+    <ClCompile Include="..\src\iNES\multicart misc\mapper230.cpp" />
+    <ClCompile Include="..\src\iNES\multicart misc\mapper232.cpp" />
+    <ClCompile Include="..\src\iNES\multicart misc\mapper233.cpp" />
+    <ClCompile Include="..\src\iNES\multicart misc\mapper234.cpp" />
+    <ClCompile Include="..\src\iNES\multicart misc\mapper235.cpp" />
+    <ClCompile Include="..\src\iNES\multicart misc\mapper236.cpp" />
+    <ClCompile Include="..\src\iNES\multicart misc\mapper237.cpp" />
+    <ClCompile Include="..\src\iNES\multicart misc\mapper274.cpp" />
+    <ClCompile Include="..\src\iNES\multicart misc\mapper286.cpp" />
+    <ClCompile Include="..\src\iNES\multicart misc\mapper289.cpp" />
+    <ClCompile Include="..\src\iNES\multicart misc\mapper293.cpp" />
+    <ClCompile Include="..\src\iNES\multicart misc\mapper294.cpp" />
+    <ClCompile Include="..\src\iNES\multicart misc\mapper310.cpp" />
+    <ClCompile Include="..\src\iNES\multicart misc\mapper314.cpp" />
+    <ClCompile Include="..\src\iNES\multicart misc\mapper319.cpp" />
+    <ClCompile Include="..\src\iNES\multicart misc\mapper320.cpp" />
+    <ClCompile Include="..\src\iNES\multicart misc\mapper331.cpp" />
+    <ClCompile Include="..\src\iNES\multicart misc\mapper332.cpp" />
+    <ClCompile Include="..\src\iNES\multicart misc\mapper335.cpp" />
+    <ClCompile Include="..\src\iNES\multicart misc\mapper337.cpp" />
+    <ClCompile Include="..\src\iNES\multicart misc\mapper350.cpp" />
+    <ClCompile Include="..\src\iNES\multicart misc\mapper352.cpp" />
+    <ClCompile Include="..\src\iNES\multicart misc\mapper354.cpp" />
+    <ClCompile Include="..\src\iNES\multicart misc\mapper357.cpp" />
+    <ClCompile Include="..\src\iNES\multicart misc\mapper359.cpp" />
+    <ClCompile Include="..\src\iNES\multicart misc\mapper360.cpp" />
+    <ClCompile Include="..\src\iNES\multicart misc\mapper363.cpp" />
+    <ClCompile Include="..\src\iNES\multicart misc\mapper381.cpp" />
+    <ClCompile Include="..\src\iNES\multicart misc\mapper382.cpp" />
+    <ClCompile Include="..\src\iNES\multicart misc\mapper389.cpp" />
+    <ClCompile Include="..\src\iNES\multicart misc\mapper390.cpp" />
+    <ClCompile Include="..\src\iNES\multicart misc\mapper396.cpp" />
+    <ClCompile Include="..\src\iNES\multicart misc\mapper400.cpp" />
+    <ClCompile Include="..\src\iNES\multicart misc\mapper403.cpp" />
+    <ClCompile Include="..\src\iNES\multicart misc\mapper414.cpp" />
+    <ClCompile Include="..\src\iNES\multicart misc\mapper416.cpp" />
+    <ClCompile Include="..\src\iNES\multicart misc\mapper428.cpp" />
+    <ClCompile Include="..\src\iNES\multicart misc\mapper431.cpp" />
+    <ClCompile Include="..\src\iNES\multicart misc\mapper434.cpp" />
+    <ClCompile Include="..\src\iNES\multicart misc\mapper437.cpp" />
+    <ClCompile Include="..\src\iNES\multicart misc\mapper438.cpp" />
+    <ClCompile Include="..\src\iNES\multicart misc\mapper439.cpp" />
+    <ClCompile Include="..\src\iNES\multicart misc\mapper452.cpp" />
+    <ClCompile Include="..\src\iNES\multicart misc\mapper462.cpp" />
+    <ClCompile Include="..\src\iNES\multicart misc\mapper463.cpp" />
+    <ClCompile Include="..\src\iNES\multicart misc\mapper466.cpp" />
+    <ClCompile Include="..\src\iNES\multicart misc\mapper470.cpp" />
+    <ClCompile Include="..\src\iNES\multicart misc\mapper500.cpp" />
+    <ClCompile Include="..\src\iNES\multicart misc\mapper501.cpp" />
+    <ClCompile Include="..\src\iNES\multicart misc\mapper502.cpp" />
+    <ClCompile Include="..\src\iNES\multicart misc\mapper519.cpp" />
+    <ClCompile Include="..\src\iNES\multicart misc\mapper528.cpp" />
+    <ClCompile Include="..\src\iNES\multicart misc\mapper540.cpp" />
+    <ClCompile Include="..\src\iNES\multicart misc\mapper742.cpp" />
+    <ClCompile Include="..\src\iNES\multicart misc\mapper744.cpp" />
+    <ClCompile Include="..\src\iNES\multicart misc\mapper746.cpp" />
+    <ClCompile Include="..\src\iNES\multicart misc\mapper749.cpp" />
+    <ClCompile Include="..\src\iNES\multicart misc\mapper762.cpp" />
+    <ClCompile Include="..\src\iNES\OneBus\mapper256.cpp" />
+    <ClCompile Include="..\src\iNES\OneBus\mapper270.cpp" />
+    <ClCompile Include="..\src\iNES\OneBus\mapper296.cpp" />
+    <ClCompile Include="..\src\iNES\OneBus\mapper407.cpp" />
+    <ClCompile Include="..\src\iNES\OneBus\mapper408.cpp" />
+    <ClCompile Include="..\src\iNES\OneBus\mapper419.cpp" />
+    <ClCompile Include="..\src\iNES\OneBus\mapper423.cpp" />
+    <ClCompile Include="..\src\iNES\OneBus\mapper424.cpp" />
+    <ClCompile Include="..\src\iNES\OneBus\mapper425.cpp" />
+    <ClCompile Include="..\src\iNES\OneBus\mapper426.cpp" />
+    <ClCompile Include="..\src\iNES\OneBus\mapper427.cpp" />
+    <ClCompile Include="..\src\iNES\OneBus\mapper436.cpp" />
+    <ClCompile Include="..\src\iNES\unimplemented.cpp" />
+    <ClCompile Include="..\src\DLL\d_iNES.cpp" />
+    <ClCompile Include="..\src\iNES\vgmcapture.cpp" />
+    <ClCompile Include="..\src\iNES\VRC-based\mapper021.cpp" />
+    <ClCompile Include="..\src\iNES\VRC-based\mapper022.cpp" />
+    <ClCompile Include="..\src\iNES\VRC-based\mapper023.cpp" />
+    <ClCompile Include="..\src\iNES\VRC-based\mapper024.cpp" />
+    <ClCompile Include="..\src\iNES\VRC-based\mapper025.cpp" />
+    <ClCompile Include="..\src\iNES\VRC-based\mapper026.cpp" />
+    <ClCompile Include="..\src\iNES\VRC-based\mapper073.cpp" />
+    <ClCompile Include="..\src\iNES\VRC-based\mapper075.cpp" />
+    <ClCompile Include="..\src\iNES\VRC-based\mapper085.cpp" />
+    <ClCompile Include="..\src\iNES\VRC-based\mapper183.cpp" />
+    <ClCompile Include="..\src\iNES\VRC-based\mapper222.cpp" />
+    <ClCompile Include="..\src\iNES\VRC-based\mapper266.cpp" />
+    <ClCompile Include="..\src\iNES\VRC-based\mapper298.cpp" />
+    <ClCompile Include="..\src\iNES\VRC-based\mapper308.cpp" />
+    <ClCompile Include="..\src\iNES\VRC-based\mapper362.cpp" />
+    <ClCompile Include="..\src\iNES\VRC-based\mapper384.cpp" />
+    <ClCompile Include="..\src\iNES\VRC-based\mapper398.cpp" />
+    <ClCompile Include="..\src\iNES\VRC-based\mapper447.cpp" />
+    <ClCompile Include="..\src\iNES\VRC-based\mapper448.cpp" />
+    <ClCompile Include="..\src\iNES\VRC-based\mapper450.cpp" />
+    <ClCompile Include="..\src\iNES\VRC-based\mapper520.cpp" />
+    <ClCompile Include="..\src\iNES\VRC-based\mapper524.cpp" />
+    <ClCompile Include="..\src\iNES\VRC-based\mapper527.cpp" />
+    <ClCompile Include="..\src\iNES\VRC-based\mapper529.cpp" />
+    <ClCompile Include="..\src\iNES\VRC-based\mapper530.cpp" />
+    <ClCompile Include="..\src\iNES\VRC-based\mapper542.cpp" />
+    <ClCompile Include="..\src\iNES\VRC-based\mapper544.cpp" />
+    <ClCompile Include="..\src\iNES\VRC-based\mapper559.cpp" />
+    <ClCompile Include="..\src\iNES\VRC-based\mapper563.cpp" />
+    <ClCompile Include="..\src\iNES\VRC-based\mapper741.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\src\Hardware\Hash.h" />
+    <ClInclude Include="..\src\Hardware\h_EEPROM.h" />
+    <ClInclude Include="..\src\Hardware\h_EEPROM_93Cx6.h" />
+    <ClInclude Include="..\src\Hardware\h_FCG.h" />
+    <ClInclude Include="..\src\Hardware\h_JV001.h" />
+    <ClInclude Include="..\src\Hardware\h_JY.h" />
+    <ClInclude Include="..\src\Hardware\h_KS202.h" />
+    <ClInclude Include="..\src\Hardware\h_LZ93D50.h" />
+    <ClInclude Include="..\src\Hardware\h_MMC6.h" />
+    <ClInclude Include="..\src\Hardware\h_OneBus.h" />
+    <ClInclude Include="..\src\Hardware\h_OneBus_GPIO.hpp" />
+    <ClInclude Include="..\src\Hardware\h_PIC16C5x.h" />
+    <ClInclude Include="..\src\Hardware\h_FlashROM.h" />
+    <ClInclude Include="..\src\Hardware\h_SerialDevice.h" />
+    <ClInclude Include="..\src\Hardware\h_TXCLatch.h" />
+    <ClInclude Include="..\src\Hardware\h_VRC24.h" />
+    <ClInclude Include="..\src\Hardware\h_VRC6.h" />
+    <ClInclude Include="..\src\Hardware\h_VRC7.h" />
+    <ClInclude Include="..\src\Hardware\simplefdc.hpp" />
+    <ClInclude Include="..\src\Hardware\Sound\Butterworth.h" />
+    <ClInclude Include="..\src\Hardware\Sound\s_ADPCM3Bit.h" />
+    <ClInclude Include="..\src\Hardware\Sound\s_FDS.h" />
+    <ClInclude Include="..\src\Hardware\Sound\s_hc55516.h" />
+    <ClInclude Include="..\src\Hardware\Sound\s_upd7756.h" />
+    <ClInclude Include="..\src\Hardware\Sound\s_waveFile.h" />
+    <ClInclude Include="..\src\iNES\vgmcapture.h" />
+    <ClInclude Include="..\src\interface.h" />
+    <ClInclude Include="..\src\Hardware\h_FME7.h" />
+    <ClInclude Include="..\src\Hardware\h_Latch.h" />
+    <ClInclude Include="..\src\Hardware\h_MMC1.h" />
+    <ClInclude Include="..\src\Hardware\h_MMC2.h" />
+    <ClInclude Include="..\src\Hardware\h_MMC3.h" />
+    <ClInclude Include="..\src\Hardware\h_MMC4.h" />
+    <ClInclude Include="..\src\Hardware\h_MMC5.h" />
+    <ClInclude Include="..\src\Hardware\h_N118.h" />
+    <ClInclude Include="..\src\Hardware\Sound\s_MMC5.h" />
+    <ClInclude Include="..\src\Hardware\Sound\s_N163.h" />
+    <ClInclude Include="..\src\Hardware\Sound\s_SUN5.h" />
+    <ClInclude Include="..\src\Hardware\Sound\s_VRC6.h" />
+    <ClInclude Include="..\src\Hardware\Sound\s_VRC7.h" />
+    <ClInclude Include="..\src\Dll\d_iNES.h" />
+    <ClInclude Include="..\src\iNES\resource.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="..\src\iNES\iNES.rc" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

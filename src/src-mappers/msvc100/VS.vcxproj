@@ -1,0 +1,128 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{F39C2587-39DD-E5BA-681F-AACD2C144F68}</ProjectGuid>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)'=='Release'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>Unicode</CharacterSet>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)'=='Debug'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Platform)'=='x64'" Label="Configuration">
+    <PlatformToolset>Windows7.1SDK</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Label="Configuration" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <PlatformToolset>v140</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Label="Configuration" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <PlatformToolset>v140</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>10.0.30319.1</_ProjectFileVersion>
+    <LinkIncremental Condition="'$(Configuration)'=='Release'">false</LinkIncremental>
+    <IntDir>$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
+    <OutDir>$(SolutionDir)$(Platform)\$(Configuration)\</OutDir>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)'=='Debug'">
+    <ClCompile>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;_USRDLL;VS_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+      <WarningLevel>Level4</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <CallingConvention>FastCall</CallingConvention>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)'=='Release'">
+    <ClCompile>
+      <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
+      <FavorSizeOrSpeed>Speed</FavorSizeOrSpeed>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;_USRDLL;VS_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <StringPooling>true</StringPooling>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <WarningLevel>Level4</WarningLevel>
+      <CallingConvention>FastCall</CallingConvention>
+      <IntrinsicFunctions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</IntrinsicFunctions>
+      <OmitFramePointers Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</OmitFramePointers>
+      <EnableFiberSafeOptimizations Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</EnableFiberSafeOptimizations>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</GenerateDebugInformation>
+      <FullProgramDatabaseFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</FullProgramDatabaseFile>
+      <OptimizeReferences Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</OptimizeReferences>
+      <EnableCOMDATFolding Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</EnableCOMDATFolding>
+      <LinkTimeCodeGeneration Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">UseLinkTimeCodeGeneration</LinkTimeCodeGeneration>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="..\src\Hardware\h_Latch.cpp" />
+    <ClCompile Include="..\src\Hardware\h_MMC1.cpp" />
+    <ClCompile Include="..\src\Hardware\h_MMC3.cpp" />
+    <ClCompile Include="..\src\Hardware\h_N118.cpp" />
+    <ClCompile Include="..\src\Hardware\h_VS.cpp" />
+    <ClCompile Include="..\src\VS\mapper000.cpp" />
+    <ClCompile Include="..\src\VS\mapper001.cpp" />
+    <ClCompile Include="..\src\VS\mapper002.cpp" />
+    <ClCompile Include="..\src\VS\mapper004.cpp" />
+    <ClCompile Include="..\src\Vs\mapper067.cpp" />
+    <ClCompile Include="..\src\VS\mapper068.cpp" />
+    <ClCompile Include="..\src\VS\mapper075.cpp" />
+    <ClCompile Include="..\src\VS\mapper099.cpp" />
+    <ClCompile Include="..\src\VS\mapper151.cpp" />
+    <ClCompile Include="..\src\Vs\mapper206.cpp" />
+    <ClCompile Include="..\src\VS\unimplemented.cpp" />
+    <ClCompile Include="..\src\DLL\d_VS.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\src\Hardware\h_N118.h" />
+    <ClInclude Include="..\src\interface.h" />
+    <ClInclude Include="..\src\Hardware\h_Latch.h" />
+    <ClInclude Include="..\src\Hardware\h_MMC1.h" />
+    <ClInclude Include="..\src\Hardware\h_MMC3.h" />
+    <ClInclude Include="..\src\Hardware\h_VS.h" />
+    <ClInclude Include="..\src\Dll\d_VS.h" />
+    <ClInclude Include="..\src\VS\resource.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="..\src\VS\VS.rc" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

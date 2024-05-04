@@ -1,0 +1,176 @@
+// Microsoft Visual C++ generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#define APSTUDIO_HIDDEN_SYMBOLS
+#include "windows.h"
+#undef APSTUDIO_HIDDEN_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// Neutral (Default) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_NEUD)
+LANGUAGE LANG_NEUTRAL, SUBLANG_DEFAULT
+#pragma code_page(1252)
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Accelerator
+//
+
+IDR_VS ACCELERATORS
+BEGIN
+    "C",            IDC_VS_COIN1,    VIRTKEY, CONTROL, NOINVERT
+    "V",            IDC_VSDUAL_COIN1,    VIRTKEY, CONTROL, NOINVERT
+END
+
+#endif    // Neutral (Default) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+/////////////////////////////////////////////////////////////////////////////
+// English (United States) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+#pragma code_page(1252)
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE 
+BEGIN
+    "#define APSTUDIO_HIDDEN_SYMBOLS\r\n"
+    "#include ""windows.h""\r\n"
+    "#undef APSTUDIO_HIDDEN_SYMBOLS\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE 
+BEGIN
+    "\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO
+BEGIN
+    IDD_VS, DIALOG
+    BEGIN
+        LEFTMARGIN, 4
+        RIGHTMARGIN, 120
+        VERTGUIDE, 60
+        VERTGUIDE, 64
+        TOPMARGIN, 4
+        BOTTOMMARGIN, 69
+        HORZGUIDE, 12
+        HORZGUIDE, 20
+        HORZGUIDE, 28
+        HORZGUIDE, 36
+        HORZGUIDE, 44
+        HORZGUIDE, 52
+        HORZGUIDE, 60
+    END
+
+    IDD_VSDUAL, DIALOG
+    BEGIN
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_VS DIALOGEX 0, 0, 124, 73
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "VS Controls"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    CONTROL         "DIP Switch &1",IDC_VS_DIP0,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,4,4,56,8
+    CONTROL         "DIP Switch &2",IDC_VS_DIP1,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,4,12,56,8
+    CONTROL         "DIP Switch &3",IDC_VS_DIP2,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,4,20,56,8
+    CONTROL         "DIP Switch &4",IDC_VS_DIP3,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,4,28,56,8
+    CONTROL         "DIP Switch &5",IDC_VS_DIP4,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,4,36,56,8
+    CONTROL         "DIP Switch &6",IDC_VS_DIP5,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,4,44,56,8
+    CONTROL         "DIP Switch &7",IDC_VS_DIP6,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,4,52,56,8
+    CONTROL         "DIP Switch &8",IDC_VS_DIP7,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,4,60,56,8
+    PUSHBUTTON      "&Left Coin",IDC_VS_COIN1,64,4,56,16
+    PUSHBUTTON      "&Right Coin",IDC_VS_COIN2,64,20,56,16
+    PUSHBUTTON      "&Service Coin",IDC_VS_COIN3,64,36,56,16
+    DEFPUSHBUTTON   "Close",IDCANCEL,64,52,56,16
+END
+
+IDD_VSDUAL DIALOGEX 0, 0, 248, 81
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "VS Dual Controls"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    CONTROL         "DIP Switch &1",IDC_VS_DIP0,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,4,12,56,8
+    CONTROL         "DIP Switch &2",IDC_VS_DIP1,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,4,20,56,8
+    CONTROL         "DIP Switch &3",IDC_VS_DIP2,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,4,28,56,8
+    CONTROL         "DIP Switch &4",IDC_VS_DIP3,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,4,36,56,8
+    CONTROL         "DIP Switch &5",IDC_VS_DIP4,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,4,44,56,8
+    CONTROL         "DIP Switch &6",IDC_VS_DIP5,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,4,52,56,8
+    CONTROL         "DIP Switch &7",IDC_VS_DIP6,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,4,60,56,8
+    CONTROL         "DIP Switch &8",IDC_VS_DIP7,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,4,68,56,8
+    PUSHBUTTON      "&Left Coin",IDC_VS_COIN1,64,12,56,16
+    PUSHBUTTON      "&Right Coin",IDC_VS_COIN2,64,28,56,16
+    PUSHBUTTON      "&Service Coin",IDC_VS_COIN3,64,44,56,16
+    CONTROL         "DIP Switch &1",IDC_VSDUAL_DIP0,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,128,12,56,8
+    CONTROL         "DIP Switch &2",IDC_VSDUAL_DIP1,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,128,20,56,8
+    CONTROL         "DIP Switch &3",IDC_VSDUAL_DIP2,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,128,28,56,8
+    CONTROL         "DIP Switch &4",IDC_VSDUAL_DIP3,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,128,36,56,8
+    CONTROL         "DIP Switch &5",IDC_VSDUAL_DIP4,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,128,44,56,8
+    CONTROL         "DIP Switch &6",IDC_VSDUAL_DIP5,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,128,52,56,8
+    CONTROL         "DIP Switch &7",IDC_VSDUAL_DIP6,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,128,60,56,8
+    CONTROL         "DIP Switch &8",IDC_VSDUAL_DIP7,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,128,68,56,8
+    PUSHBUTTON      "&Left Coin",IDC_VSDUAL_COIN1,188,12,56,16
+    PUSHBUTTON      "&Right Coin",IDC_VSDUAL_COIN2,188,28,56,16
+    PUSHBUTTON      "&Service Coin",IDC_VSDUAL_COIN3,188,44,56,16
+    DEFPUSHBUTTON   "Close",IDCANCEL,64,60,56,16
+    LTEXT           "Unit 1",IDC_STATIC,43,1,66,11
+    LTEXT           "Unit 2",IDC_STATIC,169,1,66,11
+END
+
+#endif    // English (United States) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+
