@@ -1,0 +1,9 @@
+Place .WAV-format sample files (01.wav, 02.wav, ...) into the following subdirectories:
+FT-03/	Family Trainer: Aerobics Studio
+JF-13/	Moero!! Pro Yakyuu
+JF-17/	Moero!! Pro Tennis
+JF-19/	Moero!! Pro Yakyuu '88 Kettei Ban
+JF-23/	Shin Moero!! Pro Yakyuu
+JF-24/	Terao no Dosukoi Oozumou
+JF-29/	Moe Pro! '90 Kandou Hen
+JF-33/	Moe Pro! Saikyou Hen
